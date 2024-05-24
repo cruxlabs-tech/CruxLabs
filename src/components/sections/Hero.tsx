@@ -38,6 +38,8 @@ const Hero = () => {
             We serve all around the world
           </h1>
           <img
+            loading="lazy"
+            decoding="async"
             src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Globe.svg"
             className=" rotate mx-auto h-3/4 w-2/4 md:w-full "
             alt="imag"
