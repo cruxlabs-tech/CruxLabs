@@ -8,28 +8,32 @@ import { ReactTyped } from 'react-typed';
 const Hero = () => {
   const handleOnchange = () => {};
   return (
-    <div className=" min-h-screen bg-[#0F172A] py-2">
+    <div className=" min-h-screen bg-[#0F172A] py-1">
       <MaxWidthWrapper className="flex flex-col justify-center gap-2 md:grid-cols-2 md:gap-10 lg:grid lg:gap-16   ">
-        <div className=" p-2 ">
+        <div className="p-1">
           <Link
             href="/"
-            className=" mx-auto mt-5 flex w-fit gap-3 rounded-lg border border-slate-300 px-4 py-2 text-white hover:bg-slate-600 md:mx-0 "
+            className=" mx-auto mt-2 flex w-fit gap-3 rounded-lg border border-slate-300 px-4 py-2 text-white hover:bg-slate-600 md:mx-0 "
           >
             CheckOut our Solution <MoveRight />
           </Link>
           <div className="text-center md:text-left ">
-            <h1 className="mt-7 text-5xl font-bold  text-white lg:text-7xl ">
-              Transforming <span className="text-md text-green-600">Ideas </span>into
+            <h1 className="mt-7 text-4xl font-bold  text-white lg:text-7xl ">
+              Transforming <span className="text-md text-green-600"> Ideas </span>into
               <span className="text-md text-green-600"> Digital Reality</span>
             </h1>
           </div>
-          <h1 className="mt-4 text-center text-xl text-white md:text-left  ">
-            <ReactTyped
-              strings={[
-                'Take the opportunity to soar to new heights with our cutting-edge IT solutions. Compete for our company and unlock a world of innovation,efficiency, and growth.'
-              ]}
-              typeSpeed={23}
-            />
+          <h1 className="spaxe-x-3 mt-4  text-center text-xl text-white md:text-left  ">
+            <h1>
+              Take the opportunity to soar to new heights with our cutting-edge IT solutions.
+              Compete for our company and unlock a world of innovation,efficiency, and growth.
+              {''}
+              <ReactTyped
+                className=" px-2 text-2xl  font-bold"
+                strings={['Join us on this this existing journey.']}
+                typeSpeed={23}
+              />
+            </h1>
           </h1>
 
           <div className="  my-6 flex w-full items-center justify-center gap-1  lg:justify-start  ">

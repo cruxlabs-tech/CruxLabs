@@ -10,7 +10,7 @@ const Navbar = () => {
       <MaxWidthWrapper className="flex items-center justify-between ">
         <Link href="/" className="md:text-md flex items-center gap-1 text-white ">
           <img loading="lazy" decoding="async" src={logoWhite} alt="logo" className="size-11" />
-          <span className={`${poppins.className} md:text-md text-xl font-semibold lg:text-2xl `}>
+          <span className={`${poppins.className} md:text-md text-xl font-semibold lg:text-lg `}>
             Cruxlabs
           </span>
         </Link>
