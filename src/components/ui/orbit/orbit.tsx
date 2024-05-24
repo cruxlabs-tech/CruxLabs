@@ -2,8 +2,8 @@ import OrbitingCircles from './orbiting-circle';
 
 export function Orbit() {
   return (
-    <div className=" orbit relative flex h-[500px] w-full max-w-[32rem] items-center justify-center overflow-hidden rounded-lg   md:shadow-xl">
-      <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
+    <div className=" orbit relative flex h-[500px] w-full max-w-[32rem] items-center justify-center overflow-hidden rounded-lg  ">
+      <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-100">
         Crux Labs
       </span>
 
