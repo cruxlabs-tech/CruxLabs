@@ -16,7 +16,13 @@ const WhyUs = () => {
         </div>
 
         <div className="w-full rounded-lg bg-white ">
-          <img className="h-full w-full  bg-[#0F172A] " src={whyUsImage} alt="img" />
+          <img
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full  bg-[#0F172A] "
+            src={whyUsImage}
+            alt="img"
+          />
         </div>
       </MaxWidthWrapper>
     </div>

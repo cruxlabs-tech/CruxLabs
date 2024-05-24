@@ -39,7 +39,13 @@ export default function Home() {
       <div className="bg-[#0F172A] pt-8">
         <MaxWidthWrapper className="flex flex-col items-center justify-center md:flex-row ">
           <div className="flex w-full flex-col items-center justify-center p-4 ">
-            <img src="/Mission.svg" alt="mission" className="text-center" />
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/Mission.svg"
+              alt="mission"
+              className="text-center"
+            />
             <h1 className="p-3 text-center text-2xl text-white ">Our Mission</h1>
             <h1 className="text-wrap p-2 text-center font-semibold  text-white">
               To offer businesses of all sizes innovative and customizable ecommerce solutions that
@@ -48,7 +54,7 @@ export default function Home() {
           </div>
           <div className="my-auto hidden h-40 border bg-slate-50 md:block " />
           <div className="flex w-full flex-col items-center justify-center p-4">
-            <img src="/Vision.svg" alt="vision" />
+            <img loading="lazy" decoding="async" src="/Vision.svg" alt="vision" />
             <h1 className="p-3 text-center text-2xl text-white ">Our Vision</h1>
             <h1 className="p-2 text-center font-semibold text-white">
               To be the leading provider of cutting-edge ecommerce solutions globally.
