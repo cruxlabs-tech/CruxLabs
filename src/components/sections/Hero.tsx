@@ -1,13 +1,14 @@
-'use client'; 
+'use client';
 import Link from 'next/link';
 import MaxWidthWrapper from '../utils/max-width-wrapper';
 import { MoveRight, Send } from 'lucide-react';
 import { Orbit } from '../ui/orbit/orbit';
+import Typewriter from 'typewriter-effect';
 
 const Hero = () => {
   const handleOnchange = () => {};
   return (
-    <div className=" bg-[#0F172A] py-10">
+    <div className=" bg-[#0F172A] py-2">
       <MaxWidthWrapper className="flex flex-col justify-center gap-2 md:grid-cols-2 md:gap-10 lg:grid lg:gap-16   ">
         <div className=" p-2 ">
           <Link
@@ -22,8 +23,16 @@ const Hero = () => {
             </h1>
           </div>
           <h1 className="mt-4 text-center text-xl text-white md:text-left  ">
-            Take the opportunity to elevate your business to new heights with our futuristic
-            ecommerce platforms and AI-powered ecommerce solutions.
+            <Typewriter
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString(
+                    "Take the opportunity to soar to new heights with our cutting-edge IT solutions. Compete for our company and unlock a world of innovation, efficiency, and growth. Join forces with us to revolutionize your business and stay ahead in today's dynamic digital landscape."
+                  )
+                  .changeDelay(0.1)
+                  .start();
+              }}
+            />
           </h1>
 
           <div className="  my-6 flex w-full items-center justify-center gap-1  lg:justify-start  ">
