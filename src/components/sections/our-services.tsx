@@ -1,3 +1,4 @@
+import { brandingImage, ecommergeImage, seoImage, websiteImage } from '@/lib/constants';
 import { Button } from '../ui/button';
 import CardWithImage from '../ui/card-with-image';
 import MaxWidthWrapper from '../utils/max-width-wrapper';
@@ -24,22 +25,22 @@ const OurServices = () => {
 
         <div className="flex flex-col  gap-12 sm:grid sm:grid-cols-1  md:grid-cols-2">
           <CardWithImage
-            imgsrc="/seo.png"
+            imgsrc={seoImage}
             title="Seo and Digital Marketing"
             desc="Maximize your online presence and connect with your ideal customers through well-planned SEO and digital marketing strategies"
           />
           <CardWithImage
-            imgsrc="/website.png"
+            imgsrc={websiteImage}
             title="Web Design and development"
             desc="We have been crafting websites that are both visually stunning and highly functional, designed to fit the specific requirements of your.."
           />
           <CardWithImage
-            imgsrc="/ecommerce.png"
+            imgsrc={ecommergeImage}
             title="E-commerce Solutions"
             desc="Take your company to the highest possible level with our custom e-commerce solutions. We build safe, easy-to-navigate online stores "
           />
           <CardWithImage
-            imgsrc="/branding.png"
+            imgsrc={brandingImage}
             title="Branding"
             desc="From logo design to brand strategy, create a unique brand identity that speaks to your audience. This will ensure that your brand has a.."
           />

@@ -4,9 +4,9 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
 interface CardWithImageProps {
-  title?: string;
-  desc?: string;
-  imgsrc?: string;
+  title: string;
+  desc: string;
+  imgsrc: string;
 }
 export default function CardWithImage({ title, imgsrc, desc }: CardWithImageProps) {
   return (

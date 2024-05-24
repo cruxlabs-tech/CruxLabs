@@ -1,4 +1,4 @@
-import React from 'react';
+import { whyUsImage } from '@/lib/constants';
 import MaxWidthWrapper from '../utils/max-width-wrapper';
 
 const WhyUs = () => {
@@ -16,7 +16,7 @@ const WhyUs = () => {
         </div>
 
         <div className="w-full rounded-lg bg-white ">
-          <img className="h-full w-full  bg-[#0F172A] " src="/whyus.png" alt="img" />
+          <img className="h-full w-full  bg-[#0F172A] " src={whyUsImage} alt="img" />
         </div>
       </MaxWidthWrapper>
     </div>
