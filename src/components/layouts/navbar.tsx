@@ -1,5 +1,5 @@
 import { logoWhite } from '@/lib/constants';
-import { Menu, Moon } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import MaxWidthWrapper from '../utils/max-width-wrapper';
 
@@ -23,7 +23,6 @@ const Navbar = () => {
         </div>
         <div className="mx-2 flex items-center gap-6">
           <Menu className="text-white md:hidden" />
-          <Moon className="text-white" />
         </div>
       </MaxWidthWrapper>
       <div className="w-full  border-b border-slate-500" />
