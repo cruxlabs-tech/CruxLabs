@@ -1,0 +1,6 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "@angular-eslint/component-class-suffix": "off"
+  }
+}
