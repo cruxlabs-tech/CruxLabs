@@ -7,7 +7,10 @@ const Navbar = () => {
   return (
     <nav className=" sticky inset-x-0 top-0 z-[100] h-20 w-full border-b bg-[#0F172A]/95 backdrop-blur-md  transition-all">
       <MaxWidthWrapper className="flex items-center justify-between ">
-        <h1 className="text-md md:text-md font-bold text-white md:pr-5  ">Ｆｌａｓｈｅｙ</h1>
+        <h1 className="md:text-md flex items-end gap-2  text-lg font-bold text-white md:pr-5  ">
+          <img src="/logo-white.png" alt="logo" className="h-[60px] w-[60px]" />
+          Crux labs
+        </h1>
         {/* mobile menu */}
         <div className="mr-5 flex items-center justify-between gap-10">
           <div className="links hidden items-center justify-start text-white md:flex md:gap-8 lg:gap-12 xl:gap-16  ">
