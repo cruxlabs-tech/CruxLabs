@@ -1,4 +1,4 @@
-'use client';
+'use client'; 
 import Link from 'next/link';
 import MaxWidthWrapper from '../utils/max-width-wrapper';
 import { MoveRight, Send } from 'lucide-react';
@@ -39,24 +39,9 @@ const Hero = () => {
             </div>
           </div>
         </div>
-<<<<<<< HEAD
         {/* orbit */}
         <div className=" flex flex-col items-center justify-center ">
           <Orbit />
-=======
-
-        <div className=" flex flex-col">
-          <h1 className="text-bold  z-50 mt-9 px-5 py-4 text-center text-5xl text-white">
-            We serve all around the world
-          </h1>
-          <img
-            loading="lazy"
-            decoding="async"
-            src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Globe.svg"
-            className=" rotate mx-auto h-3/4 w-2/4 md:w-full "
-            alt="imag"
-          />
->>>>>>> 55a5d0a34b72795629c921f47221b1ff05e5d999
         </div>
       </MaxWidthWrapper>
     </div>

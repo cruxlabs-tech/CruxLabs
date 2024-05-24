@@ -1,8 +1,5 @@
 import { logoWhite } from '@/lib/constants';
-<<<<<<< HEAD
-=======
 import { poppins } from '@/lib/fonts';
->>>>>>> 55a5d0a34b72795629c921f47221b1ff05e5d999
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import MaxWidthWrapper from '../utils/max-width-wrapper';
