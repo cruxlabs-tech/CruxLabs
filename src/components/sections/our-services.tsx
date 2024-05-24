@@ -1,33 +1,28 @@
-import React from "react";
-import MaxWidthWrapper from "../Global/MaxWidthWrapper";
-import { Button } from "../ui/button";
-import Cards from "../ui/card";
-import CardWithImage from "../ui/CardwithImage";
+import { Button } from '../ui/button';
+import CardWithImage from '../ui/card-with-image';
+import MaxWidthWrapper from '../utils/max-width-wrapper';
 
 const OurServices = () => {
   return (
     <div className="py-12">
-      <MaxWidthWrapper className="flex  flex-col justify-center items-center gap-8 lg:grid lg:grid-cols-2  ">
-        <div className="flex flex-col gap-2 justify-center items-center h-screen">
-          <h1 className="text-white  text-center  text-3xl py-2">
-            Our Services
-          </h1>
-          <h2 className="text-white text-xl p-2 text-center py-2">
-            When problem is there, Flashey is always there{" "}
+      <MaxWidthWrapper className="flex  flex-col items-center justify-center gap-8 lg:grid lg:grid-cols-2  ">
+        <div className="flex h-screen flex-col items-center justify-center gap-2">
+          <h1 className="py-2  text-center  text-3xl text-white">Our Services</h1>
+          <h2 className="p-2 py-2 text-center text-xl text-white">
+            When problem is there, Flashey is always there{' '}
           </h2>
-          <h1 className="text-white text-medium text-center  leading-tight py-2">
-            We play a crucial role in enabling organizations to leverage
-            technology for improved efficiency, innovation, and competitive
-            advantage. Our services include software development, network
-            infrastructure maintenance, cybersecurity, cloud computing
+          <h1 className="text-medium py-2 text-center  leading-tight text-white">
+            We play a crucial role in enabling organizations to leverage technology for improved
+            efficiency, innovation, and competitive advantage. Our services include software
+            development, network infrastructure maintenance, cybersecurity, cloud computing
             solutions, and technical support.
           </h1>
-          <Button className="text-white p-4 mx-auto border border-slate-400 hover:bg-slate-800 w-2/4">
+          <Button className="mx-auto w-2/4 border border-slate-400 p-4 text-white hover:bg-slate-800">
             View All Services
           </Button>
         </div>
 
-        <div className="flex flex-col  sm:grid sm:grid-cols-1 md:grid-cols-2  gap-12">
+        <div className="flex flex-col  gap-12 sm:grid sm:grid-cols-1  md:grid-cols-2">
           <CardWithImage
             imgsrc="/seo.png"
             title="Seo and Digital Marketing"

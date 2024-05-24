@@ -1,9 +1,7 @@
-import * as React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
+import { CardActionArea } from '@mui/material';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
 
 interface CardProps {
   title?: string;
@@ -13,14 +11,14 @@ export default function Cards({ title, desc }: CardProps) {
   return (
     <Card
       sx={{ maxWidth: 345 }}
-      className=" bg-[#0F172A] h-full rounded-xl shadow-3xl border border-gray-800 hover:bg-slate-700 mx-auto"
+      className=" shadow-3xl mx-auto h-full rounded-xl border border-gray-800 bg-[#0F172A] hover:bg-slate-700"
     >
       <CardActionArea className=" ">
         <CardContent>
           <Typography
             gutterBottom
             variant="h5"
-            className="text-white font-bold text-md"
+            className="text-md font-bold text-white"
             component="div"
           >
             {title}
