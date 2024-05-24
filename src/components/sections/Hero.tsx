@@ -23,18 +23,22 @@ const Hero = () => {
               <span className="text-md text-green-600"> Digital Reality</span>
             </h1>
           </div>
-          <h1 className="spaxe-x-3 mt-4  text-center text-xl text-white md:text-left  ">
+          <div className="spaxe-x-3 mt-4  text-center text-xl text-white md:text-left  ">
             <h1>
               Take the opportunity to soar to new heights with our cutting-edge IT solutions.
               Compete for our company and unlock a world of innovation,efficiency, and growth.
-              {''}
-              <ReactTyped
-                className=" px-2 text-2xl  font-bold"
-                strings={['Join us on this this existing journey.']}
-                typeSpeed={23}
-              />
+              {/* {''} */}
+              <div className="min-h-10">
+                <ReactTyped
+                  className=" text-2xl  font-bold"
+                  strings={['Join us on this this existing journey.']}
+                  typeSpeed={100}
+                  loop
+                  loopCount={Infinity}
+                />
+              </div>
             </h1>
-          </h1>
+          </div>
 
           <div className="  my-6 flex w-full items-center justify-center gap-1  lg:justify-start  ">
             <div className=" flex  w-3/4 items-center  justify-center gap-1 rounded-md bg-gray-700 ">
