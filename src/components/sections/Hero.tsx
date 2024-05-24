@@ -3,12 +3,12 @@ import Link from 'next/link';
 import MaxWidthWrapper from '../utils/max-width-wrapper';
 import { MoveRight, Send } from 'lucide-react';
 import { Orbit } from '../ui/orbit/orbit';
-import Typewriter from 'typewriter-effect';
+import { ReactTyped } from 'react-typed';
 
 const Hero = () => {
   const handleOnchange = () => {};
   return (
-    <div className=" bg-[#0F172A] py-2">
+    <div className=" min-h-screen bg-[#0F172A] py-2">
       <MaxWidthWrapper className="flex flex-col justify-center gap-2 md:grid-cols-2 md:gap-10 lg:grid lg:gap-16   ">
         <div className=" p-2 ">
           <Link
@@ -19,19 +19,16 @@ const Hero = () => {
           </Link>
           <div className="text-center md:text-left ">
             <h1 className="mt-7 text-5xl font-bold  text-white lg:text-7xl ">
-              Your Ecommerce Suite Partner
+              Transforming <span className="text-md text-green-600">Ideas </span>into
+              <span className="text-md text-green-600"> Digital Reality</span>
             </h1>
           </div>
           <h1 className="mt-4 text-center text-xl text-white md:text-left  ">
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString(
-                    "Take the opportunity to soar to new heights with our cutting-edge IT solutions. Compete for our company and unlock a world of innovation, efficiency, and growth. Join forces with us to revolutionize your business and stay ahead in today's dynamic digital landscape."
-                  )
-                  .changeDelay(0.1)
-                  .start();
-              }}
+            <ReactTyped
+              strings={[
+                'Take the opportunity to soar to new heights with our cutting-edge IT solutions. Compete for our company and unlock a world of innovation,efficiency, and growth.'
+              ]}
+              typeSpeed={23}
             />
           </h1>
 
