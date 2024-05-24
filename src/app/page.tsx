@@ -1,9 +1,10 @@
 import MaxWidthWrapper from '@/components/utils/max-width-wrapper';
-import Clients from '@/components/sections/clients';
 import Hero from '@/components/sections/hero';
 import OurServices from '@/components/sections/our-services';
 import WhyUs from '@/components/sections/why-us';
 import Cards from '@/components/ui/card';
+import ContactForm from '@/components/sections/contact-us';
+import Clients from '@/components/sections/clients';
 
 export default function Home() {
   return (
@@ -64,6 +65,7 @@ export default function Home() {
       </div>
       <Clients />
       <OurServices />
+      <ContactForm />
     </div>
   );
 }
