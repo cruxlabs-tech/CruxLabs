@@ -5,3 +5,5 @@ export const websiteImage = 'https://i.postimg.cc/TwbSbdgg/website.png';
 export const whyUsImage = 'https://i.postimg.cc/5yMrqhSG/whyus.png';
 export const missionImage = 'https://i.postimg.cc/0rZ7jBfh/Mission.jpg';
 export const visionImage = 'https://i.postimg.cc/jnqNvHs8/Vision.jpg';
+export const logoWhite = 'https://i.postimg.cc/1tCjbvwR/Logo-White.png';
+export const logoBlack = 'https://i.postimg.cc/fLr88JQJ/Logo-black.png';
