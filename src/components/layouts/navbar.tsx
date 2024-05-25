@@ -1,4 +1,3 @@
-import { logoWhite } from '@/lib/constants';
 import { poppins } from '@/lib/fonts';
 import { ArrowRight, Menu } from 'lucide-react';
 import Link from 'next/link';
@@ -9,9 +8,9 @@ const Navbar = () => {
     <div className="sticky top-0 z-[100] h-20 w-full bg-[#0F172A]/95 backdrop-blur-md transition-all">
       <MaxWidthWrapper className="flex items-center justify-between ">
         <Link href="/" className="md:text-md flex items-center gap-1 text-white ">
-          <img loading="lazy" decoding="async" src={logoWhite} alt="logo" className="size-11" />
+          <img loading="lazy" decoding="async" src="/new-logo.png" alt="logo" className="size-11" />
           <span className={`${poppins.className} md:text-md text-xl font-semibold lg:text-lg `}>
-            Cruxlabs
+            Astro Genesis
           </span>
         </Link>
 
