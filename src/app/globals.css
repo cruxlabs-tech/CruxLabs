@@ -87,3 +87,24 @@
     @apply bg-background text-foreground;
   }
 }
+
+input,
+textarea {
+  background-color: transparent;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+@layer components {
+  .cont {
+    @apply mx-auto h-full w-full max-w-screen-xl px-4 md:px-7 lg:px-16 xl:px-10 2xl:px-0;
+  }
+  .section-title {
+    @apply mx-auto w-fit px-4 text-center text-3xl font-black uppercase leading-10 sm:text-4xl lg:text-5xl;
+  }
+}

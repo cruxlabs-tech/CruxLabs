@@ -1,60 +1,55 @@
 'use client';
-import Link from 'next/link';
-import MaxWidthWrapper from '../utils/max-width-wrapper';
-import { MoveRight, Send } from 'lucide-react';
-import { Orbit } from '../ui/orbit/orbit';
+import { poppins } from '@/lib/fonts';
+import { ChevronRight } from 'lucide-react';
 import { ReactTyped } from 'react-typed';
+import { Orbit } from '../ui/orbit/orbit';
+import { scrollIntoView } from '@/lib/utils';
 
-const Hero = () => {
-  const handleOnchange = () => {};
+export default function Hero() {
   return (
-    <div className="mt-10 min-h-[calc(100vh-[h-80px])] bg-[#0F172A] py-1">
-      <MaxWidthWrapper className="flex flex-col justify-center gap-2 md:grid-cols-2 md:gap-10 lg:grid lg:gap-16   ">
-        <div className="p-1">
-          <Link
-            href="/"
-            className=" mx-auto mt-2 flex w-fit gap-3 rounded-lg border border-slate-300 px-4 py-2 text-white hover:bg-slate-600 md:mx-0 "
+    <main className="cont flex flex-col justify-center gap-2 py-10 md:grid md:grid-cols-2 md:gap-10 lg:min-h-[calc(100vh-96px)] lg:gap-16 lg:py-0">
+      <section className="flex flex-col justify-center">
+        <h1 className="text-center text-5xl font-bold sm:text-6xl md:text-left md:text-5xl lg:text-6xl xl:text-7xl">
+          <span>Transforming</span>
+          <span className="md:block">
+            <span className="text-emerald-600"> Ideas </span>
+            <span>into</span>
+          </span>
+          <span className="text-emerald-600 md:block"> Digital Reality</span>
+        </h1>
+
+        <div className="spaxe-x-3 my-5 min-h-10 text-center text-xl md:text-left">
+          <ReactTyped
+            className="text-xl font-semibold text-neutral-300"
+            strings={['Join us on this this fantastic journey.']}
+            typeSpeed={40}
+          />
+        </div>
+
+        <div
+          className={`${poppins.className} mx-auto flex w-fit flex-col items-center gap-x-7 gap-y-7 font-semibold md:mx-0 md:flex-row`}
+        >
+          <button
+            onClick={scrollIntoView('about-us')}
+            className="group flex h-14 items-center space-x-2 rounded-full bg-emerald-700 px-5 shadow-xl shadow-emerald-500/15 transition hover:shadow-emerald-500/20 hover:brightness-110"
           >
-            Checkout our Solution <MoveRight />
-          </Link>
-          <div className="text-center md:text-left ">
-            <h1 className="mt-7 p-2 text-4xl font-bold  text-white lg:text-7xl ">
-              Transforming <span className="text-md text-green-600"> Ideas </span>into
-              <span className="text-md text-green-600"> Digital Reality</span>
-            </h1>
-          </div>
-          <div className="spaxe-x-3 mt-4  text-center text-xl text-white md:text-left  ">
-            <div className="min-h-10">
-              <ReactTyped
-                className=" p-3 text-2xl font-bold"
-                strings={['Join us on this this existing journey.']}
-                typeSpeed={100}
-                loop
-                loopCount={Infinity}
-              />
-            </div>
-          </div>
+            <span>Learn More</span>
+            <ChevronRight className="transition group-hover:translate-x-1.5" />
+          </button>
 
-          <div className="  my-6 flex w-full items-center justify-center gap-1  lg:justify-start  ">
-            <div className=" flex  w-3/4 items-center  justify-center gap-1 rounded-md bg-gray-700 ">
-              <Send className=" border-r-[1px]  border-slate-600 px-1 text-green-600 " size={50} />
-              <input
-                onChange={handleOnchange}
-                type="email"
-                className=" w-full rounded-md
-                  bg-gray-700  p-3 text-white outline-none   placeholder:text-white placeholder:opacity-20  "
-                placeholder="Johndoe@gmail.com"
-              />
-            </div>
-          </div>
+          <button
+            onClick={scrollIntoView('contact-us')}
+            className="group flex h-14 items-center space-x-2 rounded-full border-2 border-neutral-300/70 px-5 shadow-xl shadow-white/[0.07] transition hover:bg-neutral-100 hover:text-black hover:shadow-white/15"
+          >
+            <span>Contact Us</span>
+            <ChevronRight className="transition group-hover:translate-x-1.5" />
+          </button>
         </div>
-        {/* orbit */}
-        <div className=" flex flex-col items-center justify-center ">
-          <Orbit />
-        </div>
-      </MaxWidthWrapper>
-    </div>
+      </section>
+
+      <div className="grid place-items-center">
+        <Orbit />
+      </div>
+    </main>
   );
-};
-
-export default Hero;
+}

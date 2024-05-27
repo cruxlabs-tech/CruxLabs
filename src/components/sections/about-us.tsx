@@ -3,26 +3,21 @@ import { whyUsImage } from '@/lib/constants';
 import { poppins } from '@/lib/fonts';
 import { ReactTyped } from 'react-typed';
 
-export default function WhyUs() {
+export default function AboutUs() {
   return (
     <section
-      className={`${poppins.className} cont my-6 md:my-10 lg:my-20 grid items-center space-y-12 rounded-lg bg-gray-800/40 py-10 lg:grid-cols-2 lg:space-y-0`}
+      id="about-us"
+      className={`${poppins.className} cont my-16 lg:my-20 grid items-center space-y-12 rounded-lg bg-gray-800/40 py-10 lg:grid-cols-2 lg:space-y-0`}
     >
       <div className="relative lg:p-10 xl:p-20">
         {backgroundShadow}
         <h3 className="min-h-10 text-4xl font-semibold">
-          <ReactTyped
-            strings={['Why AstroGenesis?']}
-            typeSpeed={40}
-            startDelay={500}
-            startWhenVisible
-          />
+          <ReactTyped strings={['About us']} typeSpeed={40} startDelay={500} startWhenVisible />
         </h3>
         <p className="mt-7 text-gray-300/80">
-          We excel in software innovation, offering tailored s1 olutions with industry-leading
-          expertise. Our commitment to quality ensures robust and scalable software delivered on
-          time. With ongoing support and competitive pricing, we re dedicated to your success,
-          making us your trusted partner in the digital landscape.
+          Astrogenesis Technologies is Nepal based online web service agency.The company is a team
+          of the highly skilled and talented young developers. The company aims to provide the
+          faster, reliable and top notch services all over the world.
         </p>
       </div>
 

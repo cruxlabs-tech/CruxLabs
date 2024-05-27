@@ -7,8 +7,8 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Crux Labs',
-  description: 'Crux Labs, A complete IT solution for you'
+  title: 'AstroGenesis Technology',
+  description: 'AstroGenesis Tech, A complete IT solution for you'
 };
 
 export default function RootLayout({
@@ -18,11 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#0F172A]`}>
+      <body className={`${inter.className} bg-gray-900 text-neutral-100`}>
         <Navbar />
-
         {children}
-
         <Footer />
       </body>
     </html>

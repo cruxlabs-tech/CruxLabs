@@ -1,20 +1,18 @@
-import { logoWhite } from '@/lib/constants';
+import { logoImage } from '@/lib/constants';
+import { Copyright } from 'lucide-react';
+
 import React from 'react';
 
-const Footer = () => {
+export default function footer() {
   return (
-    <footer className=" py-4 text-white">
-      <div className="container mx-auto flex items-center justify-between">
-        <div className="footer-logo">
-          <img src={logoWhite} alt="Company Logo" className="h-10" />
-        </div>
-
-        <div className="font-semibold">
-          &copy; {new Date().getFullYear()} Crux Labs. All Rights Reserved.
+    <footer className="cont">
+      <div className="flex justify-between py-6 sm:space-x-10 sm:items-center sm:space-y-0 flex-col sm:flex-row space-y-10">
+        <img src={logoImage} alt="logo" className="size-10 sm:size-14" />
+        <div className="flex space-x-3 font-medium text-gray-300">
+          <Copyright />
+          <span>2024 AstroGenesis Technologies. All Rights Reserved.</span>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

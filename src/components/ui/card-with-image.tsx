@@ -20,10 +20,10 @@ export default function CardWithImage({ title, imgsrc, desc }: CardWithImageProp
           alt="image"
         />
         <CardContent>
-          <Typography className="font-bold text-white" gutterBottom variant="h5" component="div">
+          <Typography className="font-bold " gutterBottom variant="h5" component="div">
             {title}
           </Typography>
-          <Typography className="font-medium text-white" variant="body2" color="text.secondary">
+          <Typography className="font-medium " variant="body2" color="text.secondary">
             {desc}
           </Typography>
         </CardContent>

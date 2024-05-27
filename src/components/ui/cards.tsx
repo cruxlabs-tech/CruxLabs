@@ -11,19 +11,14 @@ export default function Cards({ title, desc }: CardProps) {
   return (
     <Card
       sx={{ maxWidth: 345 }}
-      className=" shadow-3xl mx-auto h-full rounded-xl border border-gray-800 bg-[#0F172A] hover:bg-slate-700"
+      className=" shadow-3xl mx-auto h-full rounded-xl border border-gray-800 hover:bg-slate-700"
     >
       <CardActionArea className=" ">
         <CardContent>
-          <Typography
-            gutterBottom
-            variant="h5"
-            className="text-md font-bold text-white"
-            component="div"
-          >
+          <Typography gutterBottom variant="h5" className="text-md font-bold " component="div">
             {title}
           </Typography>
-          <Typography variant="body2" className="text-white">
+          <Typography variant="body2" className="">
             {desc}
           </Typography>
         </CardContent>
