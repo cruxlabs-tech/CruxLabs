@@ -1,5 +1,4 @@
 import { clsx, type ClassValue } from 'clsx';
-import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
@@ -7,10 +6,11 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const scrollIntoView = (target: string) => {
-  return (e: React.MouseEvent<HTMLButtonElement>) => {
+  return () => {
     const targetElement = document.getElementById(target);
     if (!targetElement) return;
-    console.log(targetElement.offsetTop);
-    window.scroll({ top: targetElement.offsetTop - 140, behavior: 'smooth' });
+    let scrollLength = targetElement.offsetTop - 114;
+    if (window.innerWidth < 640) scrollLength = targetElement.offsetTop - 100;
+    window.scroll({ top: scrollLength, behavior: 'smooth' });
   };
 };

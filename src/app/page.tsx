@@ -1,3 +1,4 @@
+import BottomNav from '@/components/layouts/bottom-nav';
 import AboutUs from '@/components/sections/about-us';
 import Best from '@/components/sections/best';
 import ContactUs from '@/components/sections/contact-us';
@@ -10,7 +11,8 @@ import WhyUs from '@/components/sections/why-us';
 
 export default function Page() {
   return (
-    <>
+    <main className="w-full overflow-hidden">
+      <BottomNav />
       <Hero />
       <AboutUs />
       <Services />
@@ -20,6 +22,6 @@ export default function Page() {
       <Stats />
       <Pricing />
       <ContactUs />
-    </>
+    </main>
   );
 }

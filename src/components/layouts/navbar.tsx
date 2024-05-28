@@ -1,35 +1,52 @@
 'use client';
 import { logoImage } from '@/lib/constants';
-import { inter, poppins } from '@/lib/fonts';
+import { inter } from '@/lib/fonts';
 import { scrollIntoView } from '@/lib/utils';
-import { Menu } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { MoveRight } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <div
-      className={` ${poppins.className} cont sticky left-0 top-0 z-30 flex h-24 w-full items-center justify-between bg-gray-900/40 backdrop-blur-xl transition-all`}
+    <motion.header
+      initial={{ opacity: 0, scaleX: 0.99 }}
+      whileInView={{ opacity: 1, scaleX: 1 }}
+      viewport={{ once: true }}
+      className={`sticky left-0 top-0 z-30 h-20 bg-gray-900/70 backdrop-blur-xl transition-all sm:h-24`}
     >
-      <Link href="/" className="md:text-md flex items-center space-x-3">
-        <img loading="lazy" decoding="async" src={logoImage} alt="logo" className="size-11" />
-        <span className={`${inter.className} md:text-md text-xl font-semibold lg:text-lg`}>
-          Astro Genesis
-        </span>
-      </Link>
+      <div className="cont flex items-center">
+        <Link href="/" className="md:text-md flex items-center space-x-3">
+          <img loading="lazy" decoding="async" src={logoImage} alt="logo" className="size-11" />
+          <span
+            className={`${inter.className} hidden font-semibold xs:block xs:text-xl md:hidden md:text-xl lg:block`}
+          >
+            AstroGenesis
+          </span>
+        </Link>
 
-      <nav className="hidden items-center justify-start font-medium  text-gray-200/95 md:flex md:space-x-4 lg:space-x-12">
-        <button onClick={scrollIntoView('about-us')}>About us</button>
-        <button onClick={scrollIntoView('services')}>Services</button>
-        <button onClick={scrollIntoView('testimonial')}>Testimonial</button>
-        <button onClick={scrollIntoView('contact-us')}>Contact us</button>
-        <Menu className=" md:hidden" />
+        <span className="ml-auto" />
+        <nav className="hidden items-center justify-start text-[15px] font-medium text-gray-200/95 md:flex md:space-x-10 lg:space-x-12">
+          <button onClick={scrollIntoView('about-us')} className="hover:text-gray-300/80">
+            About
+          </button>
+          <button onClick={scrollIntoView('team')} className="hover:text-gray-300/80">
+            Team
+          </button>
+          <button onClick={scrollIntoView('services')} className="hover:text-gray-300/80">
+            Services
+          </button>
+          <button onClick={scrollIntoView('testimonials')} className="hover:text-gray-300/80">
+            Testimonials
+          </button>
+        </nav>
         <button
           onClick={scrollIntoView('contact-us')}
-          className="hidden h-10 rounded-full bg-emerald-700 px-4 md:block hover:brightness-110"
+          className="group ml-10 flex h-[38px] items-center space-x-2 rounded-full bg-gray-200 px-5 text-gray-900 transition hover:brightness-110 active:scale-95"
         >
-          Let&apos;s get started
+          <span>Let&apos;s get started</span>
+          <MoveRight className="size-5 transition group-hover:translate-x-1" />
         </button>
-      </nav>
-    </div>
+      </div>
+    </motion.header>
   );
 }

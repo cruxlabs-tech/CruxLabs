@@ -1,41 +1,83 @@
 'use client';
-import { facebookImage, instagramImage, linkedInImage, xImage } from '@/lib/constants';
-import { useAutoAnimate } from '@formkit/auto-animate/react';
-import { LucideIcon, Mail, MapPin, Phone, Send, User } from 'lucide-react';
-import { InputHTMLAttributes, forwardRef } from 'react';
+import { revealFromBottom, revealFromTop } from '@/lib/animations';
+import { socialLinks } from '@/lib/constants';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { motion } from 'framer-motion';
+import { Loader2, Mail, MapPin, Phone, User } from 'lucide-react';
+import { useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { toast } from 'sonner';
+import { z } from 'zod';
+import { InputWithIcon } from '../ui/input-with-icon';
 
-const socialLinks = [
-  {
-    title: 'Facebook',
-    url: '/',
-    image: facebookImage
-  },
-  {
-    title: 'Linked In',
-    url: '/',
-    image: linkedInImage
-  },
-  {
-    title: 'Instagram',
-    url: '/',
-    image: instagramImage
-  },
-  {
-    title: 'X',
-    url: '/',
-    image: xImage
-  }
-];
+const sendMailSchema = z.object({
+  name: z
+    .string({ required_error: 'Name is required' })
+    .min(1, 'Name is required')
+    .max(50, 'Too long name')
+    .trim(),
+  email: z
+    .string({ required_error: 'Email is required', invalid_type_error: 'Invalid email' })
+    .email()
+    .max(50, 'Too long email')
+    .trim(),
+  phone: z
+    .string({ invalid_type_error: 'Invalid phone number' })
+    .max(20, 'Invalid phone number')
+    .trim()
+    .optional()
+});
+export type SendMailSchema = z.infer<typeof sendMailSchema>;
 
 export default function ContactUs() {
+  const [isSending, setIsSending] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }
+  } = useForm<SendMailSchema>({
+    resolver: zodResolver(sendMailSchema)
+  });
+
+  const onSubmit: SubmitHandler<SendMailSchema> = async (data) => {
+    setIsSending(true);
+    try {
+      const res = await fetch('/api/send-mail', { method: 'POST', body: JSON.stringify(data) });
+      if (res.ok) {
+        toast.dismiss();
+        toast.success('Mail sent successfully');
+        reset();
+        document.body.focus();
+        return;
+      }
+      res
+        .json()
+        .then((data) => {
+          throw new Error(data.message);
+        })
+        .catch(() => null);
+    } catch (error) {
+      let message = 'Unknown error occurred';
+      if (error instanceof Error) {
+        message = error.message;
+      }
+      toast.dismiss();
+      toast.error(message);
+    } finally {
+      setIsSending(false);
+    }
+  };
+
   return (
-    <div className="mt-16 md:mt-32 lg:mt-40 bg-gray-800/40 md:px-10 py-20">
+    <div className="mt-16 bg-gray-800/40 py-20 md:mt-32 md:px-10 lg:mt-40">
       <section className="cont rounded-lg text-gray-300" id="contact-us">
-        <h3 className="section-title mb-20">
+        <motion.h3 {...revealFromTop} className="section-title mb-20">
           <span>Join the</span> <span className="text-emerald-600">finest hands</span>{' '}
           <span>on the </span> <span className="text-emerald-600">market</span>
-        </h3>
-        <div className="grid space-y-16 md:grid-cols-2 md:space-y-0">
+        </motion.h3>
+
+        <motion.div {...revealFromBottom} className="grid space-y-24 md:grid-cols-2 md:space-y-0">
           <section className="flex flex-col">
             <div className="space-y-5">
               <h3 className="text-2xl font-medium">Contact us</h3>
@@ -67,78 +109,49 @@ export default function ContactUs() {
 
           <section>
             <h3 className="mb-5 text-2xl font-medium">Let us contact you</h3>
-            <form className="flex flex-col space-y-7 md:max-w-96">
+            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-7 md:max-w-96">
               <InputWithIcon
                 type="text"
-                name="name"
                 id="name"
                 placeholder="Enter your name..."
                 Icon={User}
-                error=""
+                {...register('name')}
+                error={errors.name?.message}
                 label="Name"
               />
               <InputWithIcon
                 type="email"
-                name="email"
                 id="email"
+                {...register('email')}
                 placeholder="Enter your email..."
                 Icon={Mail}
-                error=""
+                error={errors.email?.message}
                 label="Email"
               />
               <InputWithIcon
                 type="text"
-                name="phone"
+                {...register('phone')}
                 id="phone"
                 placeholder="Enter your phone number..."
                 Icon={Phone}
-                error=""
+                error={errors.phone?.message}
                 label="Phone"
               />
               <button
                 type="submit"
-                className="group flex h-10 w-full items-center justify-center space-x-3 self-end rounded-md bg-emerald-700 px-5 font-semibold hover:brightness-110"
+                className="relative flex h-10 w-full items-center justify-center space-x-1.5 self-end rounded-md bg-neutral-300 px-5 font-semibold text-black transition hover:brightness-110 active:scale-95"
               >
-                <span>Submit</span>
-                <Send className="size-5 transition group-hover:-translate-y-1 group-hover:translate-x-1" />
+                <span className={`${isSending ? 'opacity-0' : ''}`}>Submit</span>
+                {isSending && (
+                  <span className="absolute inset-0 grid place-items-center">
+                    <Loader2 className="size-6 animate-rotate" />
+                  </span>
+                )}
               </button>
             </form>
           </section>
-        </div>
+        </motion.div>
       </section>
     </div>
   );
 }
-
-type InputWithIconProps = {
-  Icon: LucideIcon;
-  label: string;
-  error: string | undefined;
-} & InputHTMLAttributes<HTMLInputElement>;
-
-const InputWithIcon = forwardRef<HTMLInputElement, InputWithIconProps>(function Component(
-  { Icon, label, error, ...inputProps },
-  ref
-) {
-  const [parentRef] = useAutoAnimate();
-  return (
-    <div ref={parentRef} className="flex flex-col space-y-1">
-      <label htmlFor={inputProps.id} className="font-medium text-gray-300/80">
-        {label}
-      </label>
-      <div
-        className={
-          'flex items-center space-x-3 rounded-md border-2 border-gray-700 px-3 focus-within:border-gray-500'
-        }
-      >
-        <Icon className="size-5 text-gray-500" />
-        <input
-          {...inputProps}
-          className={`py-2 font-medium text-gray-300 ${inputProps.className}`}
-          ref={ref}
-        />
-      </div>
-      {error && <p className="text-sm font-medium text-emerald-500">{error}</p>}
-    </div>
-  );
-});
